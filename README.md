@@ -5,6 +5,7 @@ Monitors the designated drive disk and notifies Teams when the threshold is exce
 ## Requires
 - Perl 5  
 - Windows  
+- Teams  
 
 ## License
 MIT
