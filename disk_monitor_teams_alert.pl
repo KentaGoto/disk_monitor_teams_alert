@@ -7,7 +7,7 @@ use Sys::Hostname;
 
 # Set monitored drives and warning thresholds.
 my $drive_to_monitor = 'C:';
-my $threshold_percentage = 10;
+my $threshold_percentage = 95;
 my $teams_webhook_url = 'https://365toin.webhook.office.com/'; # Webhook URL
 
 # Hostname
