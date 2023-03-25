@@ -16,7 +16,8 @@ Before running the script, make sure to configure the following variables:
 $drive_to_monitor: The drive letter of the disk to monitor, e.g., 'C:'.
 $threshold_percentage: The percentage of disk usage that will trigger an alert when exceeded, e.g., 95.
 $teams_webhook_url: The URL of the Microsoft Teams webhook that will receive the alerts.
-Usage
+
+## Usage
 
 Run the script on a Windows machine using a Perl interpreter. The script will run continuously, checking disk usage every minute and sending alerts to the configured Microsoft Teams channel when the disk usage exceeds the defined threshold.
 
