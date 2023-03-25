@@ -1,4 +1,4 @@
-# disk_monitor_teams_alert
+# Disk Space Monitor for Microsoft Teams
 
 This Perl script monitors the disk usage of a specified drive on a Windows machine and sends an alert to a Microsoft Teams channel using a webhook when the disk usage exceeds a predefined threshold.
 
