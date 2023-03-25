@@ -7,7 +7,7 @@ use Sys::Hostname;
 
 # Set monitored drives and warning thresholds.
 my $drive_to_monitor = 'C:';
-my $threshold_percentage = 95;
+my $threshold_percentage = 10;
 my $teams_webhook_url = 'https://365toin.webhook.office.com/'; # Webhook URL
 
 # Hostname
@@ -54,10 +54,14 @@ while (1) {
 
     # Determine if utilization exceeds thresholds.
     if ($usage_percentage > $threshold_percentage) {
-        my $message = get_hostname();
-        $message .= "\n";
-        $message .= "Warning: Disk usage for '$drive_to_monitor' is at $usage_percentage% (Threshold: $threshold_percentage%)";
-        print "$message\n";
+        my $hostname = get_hostname();
+        my $message .= "Warning: Disk usage for '$drive_to_monitor' is at $usage_percentage% (Threshold: $threshold_percentage%)";
+		my $body = <<EOF;
+$hostname
+$message
+EOF
+
+        print $body . "\n";
         send_to_teams($message);
     } else {
         print "Disk usage for '$drive_to_monitor' is at $usage_percentage% (Threshold: $threshold_percentage%)\n";
